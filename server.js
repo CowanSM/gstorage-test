@@ -7,7 +7,7 @@ var http = require('http');
 var path = require('path');
 
 var async = require('async');
-var socketio = require('socket.io');
+// var socketio = require('socket.io');
 var express = require('express');
 var bodyParser = require('body-parser');
 
@@ -19,7 +19,7 @@ var bodyParser = require('body-parser');
 //
 var router = express();
 var server = http.createServer(router);
-var io = socketio.listen(server);
+// var io = socketio.listen(server);
 
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -114,6 +114,8 @@ router.all('/getWorld', function(req, res) {
         res.status(500).json({'error' : 'error downloading file from google'});
         res.end();
       } else {
+        console.log('content: ');
+        console.dir(content);
         // download the file metadata
         file.getMetadata(function(err, metadata, apiResponse) {
           if (err) {
@@ -121,6 +123,8 @@ router.all('/getWorld', function(req, res) {
             res.status(500).json({'error' : 'error downloading metadata from google'});
             res.end();
           } else {
+            console.log('meta:');
+            console.dir(metadata);
             content = content[0];
             metadata = metadata[0];
             // return file data and metadata

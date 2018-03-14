@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lgurbikedev",
+  "private_key_id": "40477cbc7ad5453ae1b5e2341f564a0f72a77732",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCTxFNIh4JlkL78\nCv+QQa6rtTsAVAMomnOPEwyrP2F0tJvwJFO7UsVjoWQ0J9gt4YcaQag9QNLVq7fI\navDXhHRX2kb6RjqJP3Uj78DfGnT+r+3pXH7ZPAqWpL/LYyXg1KV/pL0qYU9p4SL1\nNpjiAQdR/Oz1lYVFJX7a11+/OwTWFiUqrNGT/WJinL7E7CeRY8+sQDJiQF/jjRn5\n5XGvvGzlSOUUzNYc3RrEjIq7+9uX5Wa7FY/x9Ds52YuwV16Hb/9Giu2/dI3yRhZ0\npQ0RHQGF7E68aEaPSZO3mvhJrpvtUXd1f4dcurCgzBnB3KLzUXJa5u+2T6XWZFwh\nxLb3fgq3AgMBAAECggEABLj1Cm/eQH24RNjbIxKeUPmJSbDlqvIIuG1c7cooRLES\n/MFEdcum6FC7oZkWZRz8kt+/TznXoyGKTZrxWInwp/AfbZc5/rHq/fuHF/pB+/PG\ncDtXCH1NP1RDlu3zw3Q4V9R9gTG79n/N/LVCfJKY18t0DUM6j6OrorXYZwWtWWQu\nWiMinLA26VTWOVMraVMwUKUlDDsrVuve/vDOAEhITlpemNKsg5mpC4wlNZuEdSUv\n+sdIPSBYzJAMMlUNG2vqR0BDrzHOCSiupxUjqFEQ7Jlq9zPyn3TdmK4gpJxQYaLf\nT4JJddQ/WuLOV9ePOatzxaJFZKwrDjX7jE0FBf5HYQKBgQDJ2AMWPAouCZvNHznP\n1yzLKs1BSiNImDIumaDLRsqzKQiHZCfWZ3HyJelNT7jZu3RixTKcbFRN3qViCFxy\nOuLMBTI1blj21/qJgw291SCHoPnvbgucaj3tIemaA3zKzCjySG9c3DndsznMzVtT\nDqPfLjJjznjxUwPf+XVjYmz8oQKBgQC7afLKtE/mXNLMGr1vryQtiExq2GhvGhKi\nL7VJkcs2wT2+h5rfxkOpiqFvsAH5xj1r2xZYPxcqqcCBnJU9Rr4/w1PWwX6vvEcN\nIA/a4bIiTMvNanv5uYzWAJy73o2b2HbvGTCPM3nlTnnjhJ7CksQCohjUJbzy7HxS\nE9Q011YwVwKBgCjaqR1J/8F7vmZRSLFR20YwHqV1bRjXfWjDPbGHXaXPy2MkGZAj\nFgQuOj+kwESJ1a/cPDc/Ef1E8HKcQKH6W0dyUcxQzn8ADjzhItnmlpP9ODmHK6B4\nPJqPv6mlxQ+DLVKE6M2B4dCG408Zzb9M+kxFHHvpIb+uztz5sBHyrR6hAoGAKfCZ\nvrb/MmQPYFGTlwywoefgggCPzl0dUmIuxZn0yfoQoTSjefRaa/R0EBRpPMYaNKrA\no1rrCkcWp2qtExtjs804U9TVTuppVAyav7bGMFrTONLdj5Lwa2uTp480TW3xn6wZ\na9JvMtuO91VUWeKSLqyrtb4EPLCjWZLKaFDQHt0CgYB71/yCS4fx82Ky3egn/sgx\nW5DDRI14pWLG/+Cs3I+jepCa3GKViuc8Dt7cSPbwXVCn20L0h5NnWZ2VMa6HHQbN\nik5SP7UkGrV6YlEi5TWApJja99QwaxDLae6G0N9lZAXS0g8Ue2ijnIvV65o2rRbC\ngrZdpGcjHS6XI15s65LXWQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "bitworld-test@lgurbikedev.iam.gserviceaccount.com",
+  "client_id": "110374269991417200851",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bitworld-test%40lgurbikedev.iam.gserviceaccount.com"
+}

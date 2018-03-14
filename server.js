@@ -115,6 +115,8 @@ router.all('/getWorld', function(req, res) {
         res.end();
       } else {
         console.log('content: ');
+        content = Buffer.from(content).toString();
+        content = JSON.parse(content);
         console.dir(content);
         // download the file metadata
         file.getMetadata(function(err, metadata, apiResponse) {
@@ -125,8 +127,6 @@ router.all('/getWorld', function(req, res) {
           } else {
             console.log('meta:');
             console.dir(metadata);
-            content = content[0];
-            metadata = metadata[0];
             // return file data and metadata
             res.status(200).json({'file' : content, 'meta' : metadata});
             res.end();

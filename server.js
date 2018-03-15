@@ -128,7 +128,6 @@ router.all('/getWorld', function(req, res) {
             res.status(500).json({'error' : 'error downloading metadata from google'});
             res.end();
           } else {
-            console.dir(metadata);
             var data = {
               'XZData' : content.XZData,
               'VoxelData' : content.VoxelData,

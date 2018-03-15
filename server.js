@@ -150,7 +150,9 @@ router.all('/updateWorld', function(req, res) {
     // open write stream (hoping this is where we specify the condition)
     var stream = file.createWriteStream({
       resumable : false,
-      ifGenerationMatch : version
+      metadata : {
+        ifGenerationMatch : version
+      }
     });
     stream.on('finish', function() {
       res.status(200).json({'ok':'ok'});

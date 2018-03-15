@@ -102,6 +102,10 @@ router.all('/getWorld', function(req, res) {
   // load the world asked for
   var name = req.param('worldName', undefined);
   
+  if (!name && req.body) {
+    name = req.body['worldName']||undefined;
+  }
+  
   if (!name) {
     res.status(400).json({'error' : 'no world name provided to load'});
     res.end();
@@ -142,6 +146,12 @@ router.all('/updateWorld', function(req, res) {
   var name = req.param('worldName', undefined);
   var data = req.param('worldData', undefined);
   var version = req.param('worldVersion', undefined);
+  
+  if (!name && req.body) {
+    name = req.body['worldName']||undefined;
+    data = req.body['worldData']||undefined;
+    version = req.body['worldVersion']||undefined;
+  }
   
   if (!name || !data || version === undefined) {
     res.status(400).json({'error' : 'missing world name/data/version'});

@@ -151,7 +151,7 @@ router.all('/updateWorld', function(req, res) {
     var stream = file.createWriteStream({
       resumable : false,
       metadata : {
-        ifGenerationMatch : version
+        'x-goog-if-generation-match' : version
       }
     });
     stream.on('finish', function() {

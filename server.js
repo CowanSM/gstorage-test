@@ -148,16 +148,18 @@ router.all('/updateWorld', function(req, res) {
   } else {
     var file = bucket.file(name,{'generation':version});
     // open write stream (hoping this is where we specify the condition)
+    var returnMeta = {};
     var stream = file.createWriteStream({
       resumable : false
     });
-    stream.on('finish', function(chunk) {
-      console.log('finish with chunk',chunk);
-      res.status(200).json({'ok':'ok'});
+    stream.on('finish', function() {
+      res.status(200).json({'version':returnMeta.generation||'0'});
       res.end();
     });
     stream.on('response', function(resp) {
-      console.log('response:',resp);
+      if (resp && resp.body) {
+        returnMeta = JSON.parse(resp.body);
+      }
     });
     stream.on('error', function(err) {
       console.error('google update error: ' + err);

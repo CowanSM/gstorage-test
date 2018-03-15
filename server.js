@@ -102,6 +102,8 @@ router.all('/getWorld', function(req, res) {
   // load the world asked for
   var name = req.param('worldName', undefined);
   
+  console.log('req body',req.body);
+  
   if (!name && req.body) {
     name = req.body['worldName']||undefined;
   }

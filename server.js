@@ -146,17 +146,18 @@ router.all('/updateWorld', function(req, res) {
     res.status(400).json({'error' : 'missing world name/data/version'});
     res.end();
   } else {
-    var file = bucket.file(name);
+    var file = bucket.file(name,{'generation':version});
     // open write stream (hoping this is where we specify the condition)
     var stream = file.createWriteStream({
-      resumable : false,
-      metadata : {
-        'x-goog-if-generation-match' : version
-      }
+      resumable : false
     });
-    stream.on('finish', function() {
+    stream.on('finish', function(chunk) {
+      console.log('finish with chunk',chunk);
       res.status(200).json({'ok':'ok'});
       res.end();
+    });
+    stream.on('response', function(resp) {
+      console.log('response:',resp);
     });
     stream.on('error', function(err) {
       console.error('google update error: ' + err);

@@ -114,10 +114,7 @@ router.all('/getWorld', function(req, res) {
         res.status(500).json({'error' : 'error downloading file from google'});
         res.end();
       } else {
-        console.log('content: ');
-        content = content.toString();
-        content = JSON.parse(content);
-        console.dir(content);
+        content = JSON.parse(content.toString());
         // download the file metadata
         file.getMetadata(function(err, metadata, apiResponse) {
           if (err) {
@@ -125,10 +122,14 @@ router.all('/getWorld', function(req, res) {
             res.status(500).json({'error' : 'error downloading metadata from google'});
             res.end();
           } else {
-            console.log('meta:');
             console.dir(metadata);
+            var data = {
+              'XZData' : content.XZData,
+              'VoxelData' : content.VoxelData,
+              'Version' : metadata.generation
+            };
             // return file data and metadata
-            res.status(200).json({'file' : content, 'meta' : metadata});
+            res.status(200).json({'data' : data});
             res.end();
           }
         });
@@ -153,7 +154,7 @@ router.all('/updateWorld', function(req, res) {
       resumable : false
     });
     stream.on('finish', function() {
-      res.status(200).json({'version':returnMeta.generation||'0'});
+      res.status(200).json({'data' : {'Version':returnMeta.generation||'0'}});
       res.end();
     });
     stream.on('response', function(resp) {

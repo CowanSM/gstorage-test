@@ -4,6 +4,7 @@
 // A simple chat server using Socket.IO, Express, and Async.
 //
 var http = require('http');
+var https = require('https');
 var path = require('path');
 
 var async = require('async');
@@ -97,6 +98,30 @@ var gcs = storage({
 
 // load the bucket
 var bucket = gcs.bucket('lgurbikedev.appspot.com');
+
+router.post('/auth', function(req, res) {
+  var host = 'https://www.googleapis.com';
+  var oauthpath = '/ouath2/v4/token';
+  var query = 'client_secret=WzlSgGdbIc30olJPmuNgoMjC&grant_type=refresh_token&refresh_token=1%2FTzwXXDeDeitx86PPPrfUBTyz9OWhgiFsrkOnivHZ5Cc&client_id=540146391073-7g3kgjf230sm29lee20duld5ma3e5dcb.apps.googleusercontent.com';
+  
+  var oauthreq = https.request({
+      hostname: host,
+      path : oauthpath,
+      method : 'POST'
+    }, function(resp) {
+      resp.setEncoding('utf8');
+      resp.on('data', function(chunk) {
+        console.log(`BODY: ${chunk}`);
+      });
+      resp.on('end', function() {
+        console.log('done');
+      });
+    });
+    
+  oauthreq.write(query);
+  oauthreq.end();
+  res.end();
+});
 
 router.all('/getWorld', function(req, res) {
   // load the world asked for

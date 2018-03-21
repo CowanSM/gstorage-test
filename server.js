@@ -117,7 +117,7 @@ router.post('/auth', function(req, res) {
     }, function(resp) {
       resp.setEncoding('utf8');
       resp.on('data', function(chunk) {
-        console.log(`BODY: ${chunk}`);
+        console.log('Body',chunk);
       });
       resp.on('end', function() {
         console.log('done');

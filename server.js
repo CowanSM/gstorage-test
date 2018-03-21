@@ -100,6 +100,13 @@ var gcs = storage({
 // load the bucket
 var bucket = gcs.bucket('lgurbikedev.appspot.com');
 
+router.all('/oauth_redir', function(req,res) {
+  console.log('received redirect:');
+  console.log('body',req.body);
+  console.log('query',req.query);
+  res.end();
+});
+
 router.post('/auth', function(req, res) {
   var host = 'www.googleapis.com';
   var oauthpath = '/ouath2/v4/token';
